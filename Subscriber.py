@@ -22,7 +22,8 @@ connection = pika.BlockingConnection(parameters)
 
 channel = connection.channel()
 
-exchange_name = 'patient_data'
+#set the appropirate channel here, there could be more than one, requiring seperate instances.
+exchange_name = ''
 channel.exchange_declare(exchange=exchange_name, exchange_type='topic')
 
 result = channel.queue_declare('', exclusive=True)
